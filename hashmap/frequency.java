@@ -11,8 +11,10 @@ public class frequency{
             else{
                 map.put(num,1);
             }
+                }
+                System.out.println(map);
         }
-        System.out.println(map);
+    
     }
 
-}
+
