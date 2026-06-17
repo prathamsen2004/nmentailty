@@ -215,6 +215,10 @@ public class slidingwindow {
 
 */ 
 
+/* 
+
+
+
 import java.util.*;
 public class slidingwindow{
     public static void main(String args []){
@@ -222,7 +226,7 @@ public class slidingwindow{
         int k=4;
         int sum = 0;
         int left =0;
-        int minLength = Integer.MAX_VALUE;
+        int minLength = Integer.MIN_VALUE;
         
         for(int right=0;right<arr.length;right++){
             sum = sum + arr[right];
@@ -241,3 +245,203 @@ public class slidingwindow{
         }
     }
 }
+
+*/
+
+/* 
+
+import java.util.*;
+public class slidingwindow{
+    public static void main(String args[]){
+        int arr[] = {2, 3, 1, 2, 4, 3};
+        int k=4;
+        int sum = 0;
+        int left=0;
+        int minlength = Integer.MAX_VALUE;
+        for(int right=0;right<arr.length;right++){
+            sum =sum +arr[right];
+            while(sum>=k){
+                minlength = Math.min(minlength,right-left+1);
+                sum = sum -arr[left];
+                
+            }
+        }
+        if(minlength == Integer.MAX_VALUE){
+            System.out.println(0);
+        }else{
+            System.out.println(minlength);
+        }
+    }
+}
+
+*/
+
+/* 
+
+
+import java.util.*;
+public class slidingwindow{
+    public static void main(String args[]){
+        String s = "abcabcbb";
+        int left =0;
+        int maxlength = 0;
+        HashSet<Character> set = new HashSet<>();
+
+        for(int right=0;right<s.length();right++){
+            while(set.contains(s.charAt(right))) {
+                  set.remove(s.charAt(left));
+                
+                 left++;
+
+
+}           
+            set.add(s.charAt(right));
+            maxlength = Math.max(maxlength,right-left+1);
+                  
+
+        }
+        System.out.println(maxlength);
+    }
+}
+
+*/
+
+/* 
+
+import java.util.*;
+public class slidingwindow{
+    public static void main(String args[]){
+        String s = "abcabcbb";
+        int left =0;
+        int maxlength =0;
+        HashSet<Character> set = new HashSet<>();       
+         for(int right=0;right<s.length();right++){
+            while(set.contains(s.charAt(right))){
+                set.remove(s.charAt(left));
+                left++;
+
+            }
+            set.add(s.charAt(right));
+            maxlength = Math.max(maxlength,right-left+1);
+
+        }
+        System.out.println(maxlength);
+
+    }
+ }
+
+
+ */
+
+ /* 
+
+ import java.util.*;
+ public class slidingwindow{
+    public static void main (String args []){
+        String s = "abcabcbb";
+        int left =0;
+        int maxlength = 0;
+        HashSet<Character> set = new HashSet<>();
+        for(int right =0;right<s.length();right++){
+            while(set.contains(s.charAt(right))){
+                set.remove(s.charAt(right));
+                left++;
+
+            }
+            set.add(s.charAt(right));
+            maxlength = Math.max(maxlength,right-left+1);
+        }
+        System.out.println(maxlength);
+    }
+ }
+
+ */
+
+ /* 
+
+ import java.util.*;
+ public class slidingwindow{
+    public static void main (String args[]){
+        int arr[]={2, 3, 1, 2, 4, 3};
+        int target =4;
+        int left =0;
+        int sum =0;
+
+        int minlength= Integer.MAX_VALUE;
+        for(int right=0;right<arr.length;right++){
+            sum = sum + arr[right];
+            while(sum>=target){
+                
+                minlength = Math.min(minlength,right-left+1);
+                sum = sum -arr[left];
+                
+            }
+            
+
+
+        }
+        if(minlength == Integer.MAX_VALUE){
+            System.out.println(0);
+        }
+        else{
+            System.out.println(minlength);
+        }
+        
+        }
+ }
+
+ */
+/* 
+
+ import java.util.*;
+ public class slidingwindow{
+    public static void main(String args[]){
+        int arr[] = {2, 3, 1, 2, 4, 3};
+        int left =0;
+        int sum =0;
+        int target =4;
+        int minlength = Integer.MAX_VALUE;
+        for(int right=0;right<arr.length;right++){
+            sum = sum + arr[right];
+            while(sum>=target){
+               
+                minlength = Math.min(minlength,right-left+1);
+                 sum = sum - arr[left];
+
+            }
+
+        }
+        if(minlength == Integer.MAX_VALUE){
+            System.out.println(0);
+        }
+        else{
+            System.out.println(minlength);
+        }
+    }
+ }
+
+ */
+
+ import java.util.*;
+ public class slidingwindow{
+    public static void main(String args[]){
+        int arr[] = {1,2,3,4,1};
+        int k;
+    for(int i=0;i<arr.length;i++){
+        for(int j=i+1;j<arr.length;j++){
+            if(arr[i] == arr[j]){
+                k = j - i;
+                System.out.print(k);
+                break;
+                
+            }
+            break;
+
+        }
+    }
+    
+
+
+
+    }
+ }
