@@ -423,25 +423,30 @@ public class slidingwindow{
  */
 
  import java.util.*;
+
  public class slidingwindow{
-    public static void main(String args[]){
-        int arr[] = {1,2,3,4,1};
-        int k;
-    for(int i=0;i<arr.length;i++){
-        for(int j=i+1;j<arr.length;j++){
-            if(arr[i] == arr[j]){
-                k = j - i;
-                System.out.print(k);
-                break;
-                
+
+    public static boolean CD(int arr[],int k){
+        int distance =0;
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int i=0;i<arr.length;i++){
+            if(map.containsKey(arr[i])){
+                distance = i - map.get(arr[i]);
+                if(distance<=k){
+                    return true;
+                }
+
             }
-            break;
-
+            map.put(arr[i],i);
+            
         }
+        return false;
     }
-    
-
-
+    public static void main(String args[]){
+        int arr[]= {1,2,3,1};
+        int k=3;
+       boolean ans = CD (arr, k);
+       System.out.println(ans);
 
     }
  }
